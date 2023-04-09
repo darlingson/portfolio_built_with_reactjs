@@ -76,6 +76,7 @@ class AboutMeSection extends React.Component {
   render() {
     return /*#__PURE__*/(
       React.createElement("div", { className: "container" }, /*#__PURE__*/
+      React.createElement("h1", null, "About Me"), /*#__PURE__*/
       React.createElement(ShortIntro, null), " ", /*#__PURE__*/React.createElement(Education, null), " ", /*#__PURE__*/React.createElement(TechnicalSkills, null), " ", /*#__PURE__*/React.createElement(SoftSkills, null)));
 
 
@@ -86,13 +87,36 @@ class Contact extends React.Component {
     return /*#__PURE__*/(
       React.createElement(React.Fragment, null, /*#__PURE__*/
       React.createElement("h1", null, "Contact"), /*#__PURE__*/
-      React.createElement("a", { href: "github.com" }, "Github")));
+      React.createElement("div", { className: "container soclinks" }, /*#__PURE__*/
+      React.createElement(SocLink, { link: "https://github.com/darlingson", name: "GitHub" }), /*#__PURE__*/
+      React.createElement(SocLink, {
+        link: "https://linkedin.com/iin/darlingsonm",
+        name: "LinkedIn" }), /*#__PURE__*/
+
+      React.createElement(SocLink, { link: "https://kaggle.com/darlingson", name: "Kaggle" }), /*#__PURE__*/
+      React.createElement(SocLink, { link: "https://zindi.com/darlingson", name: "Zindi" }))));
+
 
 
   }}
 
+function SocLink(props) {
+  return /*#__PURE__*/(
+    React.createElement("div", { className: "row" }, /*#__PURE__*/
+    React.createElement("a", { href: props.link }, props.name)));
+
+
+}
 function ShortIntro() {
   return /*#__PURE__*/(
+    React.createElement(React.Fragment, null, /*#__PURE__*/
+    React.createElement("div", { className: "row" }, /*#__PURE__*/
+    React.createElement("p", null, "My name is Darlingson Makuwila. I am a software developer, Full Stack Web developer as well as a data scientist. I am interested in building technology that helps my community. I am also a very keen learner.")), /*#__PURE__*/
+
+
+
+
+
     React.createElement("div", { className: "row" }, /*#__PURE__*/
     React.createElement("div", { className: "row" }, /*#__PURE__*/
     React.createElement("div", { className: "col s4" }, "Gender : "), /*#__PURE__*/
@@ -104,7 +128,8 @@ function ShortIntro() {
 
     React.createElement("div", { className: "row" }, /*#__PURE__*/
     React.createElement("div", { className: "col s4" }, "Location : "), /*#__PURE__*/
-    React.createElement("div", { className: "col s6" }, "Blantyre, Malawi"))));
+    React.createElement("div", { className: "col s6" }, "Blantyre, Malawi")))));
+
 
 
 
@@ -234,4 +259,3 @@ const dsSkills = [
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let rootElement = /*#__PURE__*/React.createElement(App, null);
 root.render(rootElement);
-
