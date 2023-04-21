@@ -1,3 +1,43 @@
+$(document).ready(function () {
+  $("button").click(function (e) {
+    var t = $(this).attr("sect");
+    if ($(this).attr("id") === "contact") {
+      $("html, body").animate(
+      {
+        scrollTop: $("#Mycontact").offset().top },
+
+      2000);
+
+    }
+    if ($(this).attr("id") === "about") {
+      $("html, body").animate(
+      {
+        scrollTop: $("#Myabout").offset().top },
+
+      2000);
+
+    }
+    if ($(this).attr("id") === "education") {
+      $("html, body").animate(
+      {
+        scrollTop: $("#Myeducation").offset().top },
+
+      2000);
+
+    }
+    if ($(this).attr("id") === "projects") {
+      $("html, body").animate(
+      {
+        scrollTop: $("#Myprojects").offset().top },
+
+      2000);
+
+    }
+  });
+});
+
+
+
 class App extends React.Component {
   render() {
     return /*#__PURE__*/(
@@ -15,7 +55,7 @@ class Projects extends React.Component {
   render() {
     return /*#__PURE__*/(
       React.createElement(React.Fragment, null, /*#__PURE__*/
-      React.createElement("h1", null, "Projects"), /*#__PURE__*/
+      React.createElement("h1", { id: "Myprojects" }, "Projects"), /*#__PURE__*/
       React.createElement(Project, {
         name: "Text to sign language translator",
         url: "",
@@ -64,10 +104,9 @@ class BannerContent extends React.Component {
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
       React.createElement(WelcomeMessage, null), /*#__PURE__*/
-      React.createElement(Link, { text: "about me", url: "contact.html" }), /*#__PURE__*/
-      React.createElement(Link, { text: "contact me ", url: "contact.html" }), /*#__PURE__*/
-      React.createElement(Link, { text: "my projects ", url: "contact.html" }), /*#__PURE__*/
-      React.createElement(Link, { text: "my resume ", url: "contact.html" })));
+      React.createElement(Link, { text: "about me", url: "contact.html", id: "about", sect: "about" }), /*#__PURE__*/
+      React.createElement(Link, { text: "contact me ", url: "contact.html", id: "contact" }), /*#__PURE__*/
+      React.createElement(Link, { text: "my projects ", url: "contact.html", id: "projects" })));
 
 
   }}
@@ -75,7 +114,7 @@ class BannerContent extends React.Component {
 class AboutMeSection extends React.Component {
   render() {
     return /*#__PURE__*/(
-      React.createElement("div", { className: "container" }, /*#__PURE__*/
+      React.createElement("div", { className: "container", id: "Myabout" }, /*#__PURE__*/
       React.createElement("h1", null, "About Me"), /*#__PURE__*/
       React.createElement(ShortIntro, null), " ", /*#__PURE__*/React.createElement(Education, null), " ", /*#__PURE__*/React.createElement(TechnicalSkills, null), " ", /*#__PURE__*/React.createElement(SoftSkills, null)));
 
@@ -87,7 +126,7 @@ class Contact extends React.Component {
     return /*#__PURE__*/(
       React.createElement(React.Fragment, null, /*#__PURE__*/
       React.createElement("h1", null, "Contact"), /*#__PURE__*/
-      React.createElement("div", { className: "container soclinks" }, /*#__PURE__*/
+      React.createElement("div", { className: "container soclinks", id: "Mycontact" }, /*#__PURE__*/
       React.createElement(SocLink, { link: "https://github.com/darlingson", name: "GitHub" }), /*#__PURE__*/
       React.createElement(SocLink, {
         link: "https://linkedin.com/iin/darlingsonm",
@@ -138,7 +177,7 @@ function Education() {
   return /*#__PURE__*/(
     React.createElement(React.Fragment, null, /*#__PURE__*/
     React.createElement("h1", null, "Education "), /*#__PURE__*/
-    React.createElement("div", null, /*#__PURE__*/
+    React.createElement("div", { id: "Myeducation" }, /*#__PURE__*/
     React.createElement(Qualification, {
       name: "BSc Management Information Systems",
       school: "Malawi University of Business and Applied Sciences",
@@ -205,7 +244,7 @@ function WelcomeMessage() {
   return /*#__PURE__*/(
     React.createElement("div", null, /*#__PURE__*/
     React.createElement("h1", null, /*#__PURE__*/
-    React.createElement("span", null, " Hi, I am Darlingson ")), /*#__PURE__*/
+    React.createElement("span", { id: "h" }, " Hi, I am Darlingson ")), /*#__PURE__*/
 
     React.createElement("h2", null, /*#__PURE__*/
     React.createElement("span", null, " Full Stack Developer and Data Scientist"))));
@@ -213,16 +252,28 @@ function WelcomeMessage() {
 
 
 }
+
 function Link(props) {
   return /*#__PURE__*/(
     React.createElement("button", {
       className: "waves-effect waves-light btn  btn-small",
-      href: props.url },
+      href: props.url,
+      id: props.id,
+      sect: props.sect },
 
     props.text, " "));
 
 
 }
+/*
+function Link(props) {
+  return (
+    <input
+      className="waves-effect waves-light btn  btn-small"
+      type="button"
+    />
+  );
+}*/
 function TechList(props) {
   const list = props.tlist;
 
