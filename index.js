@@ -1,3 +1,4 @@
+// manually registering the buttons with jQuery
 $(document).ready(function () {
   $("button").click(function (e) {
     var t = $(this).attr("sect");
@@ -35,8 +36,6 @@ $(document).ready(function () {
     }
   });
 });
-
-
 
 class App extends React.Component {
   render() {
