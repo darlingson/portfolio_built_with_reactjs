@@ -42,6 +42,7 @@ class App extends React.Component {
     return /*#__PURE__*/(
       React.createElement("div", null,
       " ", /*#__PURE__*/
+      React.createElement(TopScroll, null), /*#__PURE__*/
       React.createElement(WelcomeBanner, null), /*#__PURE__*/
       React.createElement(AboutMeSection, null), /*#__PURE__*/
       React.createElement(Projects, null), /*#__PURE__*/
@@ -49,6 +50,8 @@ class App extends React.Component {
 
 
   }}
+
+
 function TopScroll(props) {
   return /*#__PURE__*/(
     React.createElement("div", null, /*#__PURE__*/
@@ -58,6 +61,11 @@ function TopScroll(props) {
       onClick: () => {
         document.documentElement.scrollTop = 0;
       } }, "Top")));
+
+
+
+
+
 }
 
 class Projects extends React.Component {
