@@ -49,6 +49,16 @@ class App extends React.Component {
 
 
   }}
+function TopScroll(props) {
+  return /*#__PURE__*/(
+    React.createElement("div", null, /*#__PURE__*/
+    React.createElement("button", {
+      id: "top",
+      className: "waves-effect waves-light btn  btn-small",
+      onClick: () => {
+        document.documentElement.scrollTop = 0;
+      } }, "Top")));
+}
 
 class Projects extends React.Component {
   render() {
